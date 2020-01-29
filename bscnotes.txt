@@ -1,0 +1,21 @@
+Bcs. notes:
+
+tools: 
+https://github.com/Dobiasd/frugally-deep
+	keras -> cpp
+https://gitlab.com/arquolo/kerasify || https://github.com/moof2k/kerasify
+	keras -> cpp
+
+My version is edited version of moof2k, since newer arquolo was much more complicated than expected, with a few extra
+custom activaton functions manually added.
+
+- first train keras network in python
+- convert to kerasify custom weight and bias format
+- make a cpp file with the correct name of input weight and bias file and import keras_model which knows how to
+  read the weight and bias file.
+- test result should be almost identical to python tet result, difference comes from how many bytes are allocated
+  in python vs cpp
+- this cpp file can be converted to a mex file which can be run from matlab (cheating?), not native matlab code,
+  theoretically could create a same system but in matlab code that keras_model uses and matlab code should output
+  the same.
+
